@@ -1,24 +1,24 @@
  <?php
-// $servername = 'localhost';
-// $username = 'root';
-// $password = '';
+ $nomeServer = 'localhost';
+ $usuario = 'root';
+ $senha = '';
 
-// // Create connection
-// $conn = new mysqli($servername, $username, $password, 'mydb');
 
-// // Check connection
-// if ($conn->connect_error) {
-//     die('Connection failed: ' . $conn->connect_error);
-// }
+ $conn = new mysqli($nomeServer, $usuario, $senha, 'mydb');
 
-// echo 'Connected successfully';
-// if (isset($_POST['submit'])) {
-//     mysqli_query(
-//         $conn,
-//         "INSERT INTO USERS  (firstname, lastname, email, username, gender) VALUES('$_POST[firstname]', '$_POST[lastname]', '$_POST[email]', '$_POST[username]', '$_POST[gender]')"
-//     );
-// }
-//
+
+ if ($conn->connect_error) {
+     die('Connection failed: ' . $conn->connect_error);
+ }
+
+ echo 'Connected successfully';
+ if (isset($_POST['submit'])) {
+    mysqli_query(
+        $conn,
+ "INSERIR EM USUÁRIOS  (primeiro, sobrenome, email, usuario, genero) VALUES('$_POST[primeiro]', '$_POST[sobrenome]', '$_POST[email]', '$_POST[usuario]', '$_POST[genero]')"
+    );
+ }
+
 ?> 
 
 <!DOCTYPE html>
@@ -31,15 +31,15 @@
 </head>
 <body>
     <form action="/handleRegister.php" method="post">  
-    Firstname:<input type="text" name="firstname"><br>
-    Lastname:<input type="text" name="lastname"><br>
+    Primeiro:<input type="text" name="primeiro"><br>
+    Sobrenome:<input type="text" name="sobrenome "><br>
     Email:<input type="email" name="email"><br>
-    Username: <input type="text" name="username"><br>
+    Username: <input type="text" name="usurario"><br>
     <label for="gender">Gender:
-        Masculino:<input type="radio" value="male" name="gender">
-        Feminino:<input type="radio" value="female" name="gender"><br>
+        Masculino:<input type="radio" value="male" name="genero">
+        Feminino:<input type="radio" value="female" name="genero"><br>
     </label>
-        <button type="submit" name="submit">Submit</button>
+        <button type="submit" name="submit">Enviar</button>
     </form>
 </body>
 </html>
