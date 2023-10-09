@@ -11,7 +11,7 @@
      die('Connection failed: ' . $conn->connect_error);
  }
 
- echo 'Connected successfully';
+ echo 'Conectado com sucesso!';
  if (isset($_POST['submit'])) {
     mysqli_query(
         $conn,
@@ -35,7 +35,7 @@
     Sobrenome:<input type="text" name="sobrenome "><br>
     Email:<input type="email" name="email"><br>
     Username: <input type="text" name="usurario"><br>
-    <label for="gender">Gender:
+    <label for="gender">Gênero :
         Masculino:<input type="radio" value="male" name="genero">
         Feminino:<input type="radio" value="female" name="genero"><br>
     </label>
